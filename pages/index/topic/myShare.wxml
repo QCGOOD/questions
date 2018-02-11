@@ -1,0 +1,28 @@
+
+<view class='answer'>
+   <view style='height: 20rpx;'></view>
+   <!--转发  -->
+   <view class='answer-topic'>
+      <view class='answer-topic-circle'></view>
+      <viwe class="answer-topic-box">
+         <view class='share-info'>
+            <image class='share-info-img' src="{{questionGame.avatarUrl}}"></image>
+            <view class='share-info-name'>{{questionGame.nickName}}</view>
+            <view class='share-info-text'>
+               <text wx:if="{{questionGame.type == 2}}">发了一个语音红包</text>
+               <text wx:else>发了一个文字红包</text>
+               <image class='share-info-yuyin' wx:if="{{type == 2}}" src="../images/sound.png" mode="aspectFit"></image>
+            </view>
+         </view>
+         <view class='share-tishi'>
+            <view class='share-tishi-title'>温馨提示</view>
+            <view class='share-tishi-text'>未领取的金额，将于24小时后退回至余额</view>
+         </view>
+      </viwe>
+      
+   </view>
+  <view class='share-btn'>
+		<button open-type="share" type="primary" class='share-btn-item'>转发到好友或群聊</button>
+	<button class='share-btn-item' type="primary" bindtap='getImage'>生成朋友圈分享图</button>
+	</view>
+</view>

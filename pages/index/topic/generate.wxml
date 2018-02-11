@@ -1,0 +1,31 @@
+<!--pages/index/generate/generate.wxml-->
+<wxs module="getFloat" src="../../../filter/float.wxs"></wxs>
+
+<view class='generate'>
+  <view class='generate-info'>
+    <image class='generate-info-img' src="{{userInfo.avatarUrl}}"></image>
+    <view class='generate-info-name'>{{userInfo.nickName}}</view>
+  </view>
+
+  <view class='generate-box'>
+
+    <view class='generate-box-input'>
+      <block wx:for-items="{{model}}" wx:key="{{index}}">
+        <view class='generate-box-input-item' >
+          <text class='generate-box-input-item-title'>{{item.name}}</text>
+          <view class='generate-box-input-item-input'>
+            <input placeholder='{{item.placeholder}}' maxlength="25" value="{{item.value}}" type="{{item.type}}" bindinput="check" bindblur="bindKeyInput" data-index="{{index}}"></input>
+            <text wx:if="{{item.company}}">{{item.company}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <button class='generate-box-btn' bindtap='next'>
+      <text wx:if="{{model[0].value}}">还需支付{{getFloat.getFloat(model[0].value + getFloat.branchChangeElement(serviceCharge, true))}}元</text>
+      <text wx:else>确认生成红包</text>
+    </button>
+    <navigator class='generate-box-btn-cancel' open-type="navigateBack" hover-class="none">上一步</navigator>
+    <view class="service-charge">需要支付￥{{getFloat.baoliu(serviceCharge)}}服务费</view>
+  </view>
+</view>

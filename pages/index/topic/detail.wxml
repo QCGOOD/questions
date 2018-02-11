@@ -1,0 +1,52 @@
+<!--pages/index/topic/detail.wxml-->
+<wxs module="baoliu" src="../../../filter/float.wxs"></wxs>
+
+<view class='detail'>
+  <view class='detail-info'>
+    <image class='detail-info-img' src="{{userInfo.avatarUrl}}"></image>
+    <view class='detail-info-name'>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+
+    <view class='detail-price'>
+      <view class='detail-price-title'>{{baoliu.baoliu(answer.bonusAmount)}}元</view>
+      <view class='detail-price-text'>已存入我的余额，可提现到微信</view>
+    </view>
+
+    <view class='detail-topic-btn'>
+      <view class='detail-topic-btn-item' bindtap='navigate' data-url="/pages/index/member/myBalance">
+        <i class="iconfont icon-34"></i>
+        <text>去提现</text>
+      </view>
+      <view class='detail-topic-btn-item' bindtap='navigate' data-url="/pages/index/index">
+        <i class="iconfont icon-hongbao"></i>
+        <text>再发一个</text>
+      </view>
+      <view class='detail-topic-btn-item' bindtap='navigate' data-url="/pages/index/topic/myShare?id={{options.id}}">
+        <i class="iconfont icon-fenxiang2"></i>
+        <text>去转发</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='detail-list'>
+    <view class='detail-list-title'>已领取{{getNum}}/{{questionGame.bonusQty}}个，共{{baoliu.baoliu(questionGame.bonusAmount)}}元</view>
+    <block wx:for-items="{{receiveList}}" wx:key="{{index}}">
+      <view class="detail-item">
+        <view class='detail-item-left'>
+          <image class='detail-item-left-img' src="{{item.avatarUrl}}"></image>
+          <view class='detail-item-left-info'>
+            <view class='detail-item-left-info-name'>{{item.nickName}}</view>
+            <view class='detail-item-left-info-time'>{{item.createTime}}</view>
+          </view>
+        </view>
+        <view class='detail-item-right'>
+          <view class='detail-item-right-number'>
+            {{baoliu.baoliu(item.bonusAmount)}}
+            <text>元</text></view>
+          <view class='detail-item-right-dui'>答对了</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

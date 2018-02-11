@@ -1,0 +1,38 @@
+<!--pages/index/member/user.wxml-->
+<view class='user'>
+  <!--个人信息  -->
+  <view class='user-info'>
+    <image class='user-info-img' src="{{userInfo.avatarUrl}}"></image>
+    <view class='user-info-name'>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <!--按钮  -->
+  <view class='user-btn'>
+    <block wx:for-items="{{btnList}}" wx:key="{{index}}">
+      <navigator class='user-btn-item' url="{{item.url}}">
+        <image src='{{item.img}}' mode='aspectFit'></image>
+        <view class='user-btn-item-text'>{{item.name}}</view>
+      </navigator>
+    </block>
+  </view>
+
+  <!--导航  -->
+  <view class='user-navigation'>
+      <navigator class='user-navigation-item' url="problem">
+        <view class='user-navigation-item-left'>
+          <i class="iconfont icon-wenti-m"></i>
+          <text>常见问题</text>
+        </view>
+        <i class="iconfont icon-jiantou"></i>
+      </navigator>
+      <button open-type="contact" id="btn-contact" class='user-navigation-item' url="balance">
+        <view class='user-navigation-item-left'>
+          <i class="iconfont icon-kefu" style="height:90rpx;"></i>
+          <text>联系客服</text>
+        </view>
+        <i class="iconfont icon-jiantou" style="position:absolute; right:20rpx; top: -5rpx;"></i>
+      </button>
+  </view>
+</view>

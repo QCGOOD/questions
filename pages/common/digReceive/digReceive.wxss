@@ -1,0 +1,163 @@
+/* pages/common/digReceive/digReceive.wxss */
+.dig-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.5);
+}
+.dig-receive-top {
+  position: fixed;
+  width: 640rpx;
+  height: 250rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 30rpx; 
+  overflow: hidden;
+}
+.dig-receive-top-half {
+  position: absolute;
+  top: 10rpx;
+  left: -20rpx;
+  right: -20rpx;
+  background-color: #d85940;
+  height: 400rpx;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 5rpx 5rpx #c6523b;
+}
+.dig-receive-top-text {
+  position: absolute;
+  color: #fff;
+  font-size: 50rpx;
+  width: 100%;
+  top: 100rpx;
+  /* left: 50%; */
+  /* transform: translate(-50%, 0); */
+  text-align: center;
+}
+
+.dig-receive {
+  position: fixed;
+  width: 640rpx;
+  height: 780rpx;
+  background-color: #d85940;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.dig-receive-top-radius {
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  position: fixed;
+  width: 640rpx;
+  height: 780rpx;
+  background-color: #d85940;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  overflow: hidden;
+}
+
+.dig-receive-close {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+.dig-receive-half {
+  position: absolute;
+  top: -180rpx;
+  left: -20rpx;
+  right: -20rpx;
+  background-color: #d85940;
+  height: 400rpx;
+  border-radius: 0 0 50% 50%;
+  /* box-shadow: 0 5rpx 5rpx #c6523b; */
+  box-shadow: 0rpx 10rpx 10rpx 0rpx #c25039;
+}
+.dig-receive-chai {
+  position: absolute;
+  top: -180rpx;
+  left: -20rpx;
+  right: -20rpx;
+  background-color: #c84a31;
+  height: 400rpx;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0px -5px 8px #b3422c inset; 
+}
+.dig-receive-kai {
+  position: absolute;
+  width: 230rpx;
+  height: 230rpx;
+  background-color: #ffb403;
+  border-radius: 50%;
+  border: 8rpx solid #fef162;
+  line-height: 230rpx;
+  text-align: center;
+  /* font-size: 100rpx; */
+  color: #fff;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 100rpx;
+  transition: all 1s;
+}
+
+.dig-receive-zhuan {
+  animation: rotate 1s;
+}
+.dig-receive-kai-text {
+  font-size: 100rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, 0) rotateY(90deg);
+  }
+  to {
+    transform: translate(-50%, 0) rotateY(360deg);
+  }
+}
+
+
+.dig-receive-kai-price {
+  font-size: 60rpx;
+}
+.dig-receive-info {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 375rpx;
+  text-align: center;
+  width: 100%;
+}
+.dig-receive-gx {
+  font-size: 55rpx;
+  color: #ffb403;
+}
+.dig-receive-info-img {
+  margin-top: 60rpx;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  border: 1rpx solid #f0b82c;
+}
+.dig-receive-info-text {
+  color: #ffb403;
+  font-size: 34rpx;
+  margin-top: 20rpx;
+}
+.dig-receive-check {
+  position: absolute;
+  bottom: 30rpx;
+  color: #ffb403;
+  font-size: 30rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

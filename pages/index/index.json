@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#362387",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "select-item": "/pages/common/selectItem/selectItem"
+  }
+}

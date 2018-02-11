@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#362387",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "receive-item": "/pages/common/receiveItem/receiveItem",
+    "dig-receive": "/pages/common/digReceive/digReceive",
+    "dig-finish": "/pages/common/digFinish/digFinish"
+  }
+}

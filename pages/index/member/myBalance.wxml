@@ -1,0 +1,18 @@
+<wxs module="getFloat" src="../../../filter/float.wxs"></wxs>
+<view class="wrapper">
+   <view class="balance-wrap-top">
+      <image class="balance-img" src="http://question-1255600302.file.myqcloud.com/attachments/image/wallet.png"></image>
+      <view class="balance-text">钱包余额</view>
+      <view class="price">￥{{getFloat.baoliu(price)}}</view>
+   </view>
+   <view class="balance-wrap-bottom">
+      <view class="balance-tip">
+         <text>提现申请后会在1~5个工作日内打入您的微信钱包</text>
+         <!-- <text>每次最少一元，每天最多提现三次</text> -->
+      </view>
+      <button class="balance-btn" hover-class="none" open-type="contact">提现</button>
+      <navigator class="balance-detail" hover-class="none" url="./record">收支明细</navigator>
+   </view>
+</view>
+
+

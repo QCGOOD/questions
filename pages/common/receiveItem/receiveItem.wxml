@@ -1,0 +1,16 @@
+<!--pages/common/receiveItem/receiveItem.wxml-->
+<wxs module="branchChangeElement" src="../../../filter/float.wxs"></wxs>
+
+<view class="receive-item {{index !== length-1 ? 'receive-item-border' : ''}}">
+  <view class='receive-item-left'>
+    <image class='receive-item-left-img' src="{{item.avatarUrl}}"></image>
+    <view class='receive-item-left-info'>
+      <view class='receive-item-left-info-name'>{{item.nickName}}</view>
+      <view class='receive-item-left-info-time'>{{item.createTime}}</view>
+    </view>
+  </view>
+  <view class='receive-item-right'>
+    <view class='receive-item-right-number'>{{branchChangeElement.branchChangeElement(item.bonusAmount)}}<text>元</text></view>
+    <view class='receive-item-right-dui'>答对了</view>
+  </view>
+</view>

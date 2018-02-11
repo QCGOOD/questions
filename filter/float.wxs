@@ -1,0 +1,36 @@
+
+var Float = {
+  getFloat: function (value, number) {
+    if (!value && value != 0 ) return;
+    if (typeof value === 'string') return value
+    if (number) return value.toFixed(number)
+    return value.toFixed(2)
+  },
+  Replace: function(value) {
+    var reg = getRegExp("-", "g");
+    return value.replace(reg, ".")
+  },
+  branchChangeElement: function (value, float) {
+    if (!value && value != 0 ) return 0;
+    var val = (value/100)
+    if (float) return parseFloat(val.toFixed(2))
+    else return val
+  },
+  baoliu: function (value) {
+    if (!value && value != 0 ) {
+      var val = 0
+      return val.toFixed(2)
+      return;
+    }
+    var val = value/100
+    return val.toFixed(2)
+  }
+}
+
+module.exports = {
+  getFloat: Float.getFloat,
+  Replace: Float.Replace,
+  branchChangeElement: Float.branchChangeElement,
+  baoliu: Float.baoliu,
+}
+

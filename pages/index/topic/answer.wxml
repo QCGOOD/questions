@@ -1,0 +1,97 @@
+<!--pages/index/answer/answer.wxml-->
+<wxs module="branchChangeElement" src="../../../filter/float.wxs"></wxs>
+
+<view class='answer'>
+  <view style='height: 20rpx;'></view>
+
+  
+  <view class='answer-topic'>
+    <view class='answer-topic-circle'></view>
+    <view class='answer-topic-sy'>剩余红包</view>
+    <view class='answer-topic-sum'>{{questionGame.remainBonusQty}}</view>
+
+    <!--语音问题区  -->
+    <view class='answer-topic-sound' wx:if="{{questionGame.type === 2}}">
+      <view class='answer-topic-sound-left'>
+        <image src="{{questionUser.avatarUrl}}"></image>
+        <view class='answer-topic-sound-left-name'>{{questionUser.nickName}}</view>
+      </view>
+      <view class='answer-topic-sound-middle' bindtap='play'>
+        <image class='answer-topic-sound-middle-img' src='http://question-1255600302.file.myqcloud.com/attachments/image/sound-m.png'></image>
+         <image class='answer-topic-sound-middle-yuyin' src='http://question-1255600302.file.myqcloud.com/attachments/image/yuyin-1.png' ></image> 
+        <image class='answer-topic-sound-middle-yuyin' src='http://question-1255600302.file.myqcloud.com/attachments/image/yuyin-2.png' hidden="{{yuyinIndex < 1}}"></image>
+        <image class='answer-topic-sound-middle-yuyin' src='http://question-1255600302.file.myqcloud.com/attachments/image/yuyin-3.png' hidden="{{yuyinIndex < 2}}"></image>
+        <view class='answer-topic-sound-middle-tip'>答对就能获得赏金哦</view>
+      </view>
+      <view class='answer-topic-sound-right'>{{recordSecond}}"</view>
+    </view>
+
+    <!--文字问题区  -->
+    <view class='answer-topic-sound' wx:else>
+      <view class='answer-topic-sound-left'>
+        <image src="{{questionUser.avatarUrl}}"></image>
+        <view class='answer-topic-sound-left-name'>{{questionUser.nickName}}</view>
+      </view>
+      <view class='answer-topic-sound-middle answer-topic-text-middle'>
+        <image class='answer-topic-sound-middle-img' src='http://question-1255600302.file.myqcloud.com/attachments/image/sound-m.png'></image>
+        <text>{{questionGame.question}}</text>
+        <view class='answer-topic-sound-middle-tip'>答对就能获得赏金哦</view>
+      </view>
+    </view>
+
+    <view class='answer-topic-btn'>
+      <view class='answer-topic-btn-item' bindtap='navigate' data-url="/pages/index/member/myBalance">
+        <i class="iconfont icon-34"></i>
+        <text>去提现</text>
+      </view>
+      <view class='answer-topic-btn-item' bindtap='navigate' data-url="/pages/index/index">
+        <i class="iconfont icon-hongbao"></i>
+        <text>再发一个</text>
+      </view>
+      <view class='answer-topic-btn-item' bindtap='navigate' data-url="/pages/index/topic/myShare?id={{model.id}}">
+        <i class="iconfont icon-fenxiang2"></i>
+        <text>去转发</text>
+      </view>
+    </view>
+    
+  </view>
+  
+
+
+  <!--答案选项  -->
+  <view class='answer-select'>
+    <navigator class="tousu" url="/pages/index/topic/complaint?id={{model.id}}">投诉</navigator>
+    
+    <block wx:for-items="{{answerSelectList}}" wx:key="{{item.name}}">
+      <view class="answer-select-item {{item.choiceRight ? 'answer-select-item-dui' : ''}} {{item.choiceWrong ? 'answer-select-item-cuo' : ''}}"
+ bindtap="selectAnswer" data-index="{{index}}" data-name="{{item.name}}">
+        <i class="iconfont icon-dui answer-select-item-icon" wx:if="{{item.choiceRight}}"></i>
+        <i class="iconfont icon-cuo answer-select-item-icon" wx:if="{{item.choiceWrong}}"></i>
+      <text>{{item.name}}. {{item.text}}</text>
+      </view>
+    </block>
+  </view> 
+
+  <!-- <view class='user-receive'>
+    <image src='../images/head.jpg' mode='aspectFit'></image>
+    用户名领了红包
+  </view> -->
+
+  <view class='ranking'>
+    <view class='ranking-header'>
+      <image src='http://question-1255600302.file.myqcloud.com/attachments/image/line.png' mode='aspectFit'></image>
+      <view class='ranking-header-title'>榜单</view>
+      <image src='http://question-1255600302.file.myqcloud.com/attachments/image/line.png' mode='aspectFit'></image>
+      <view class='ranking-header-desc'>已领取{{receiveList.length}}/{{questionGame.bonusQty}}个，共{{branchChangeElement.branchChangeElement(questionGame.bonusAmount)}}元</view>
+    </view>
+    <view class='ranking-list'>
+      <block wx:for-items="{{receiveList}}" wx:key="{{item.index}}">
+        <receive-item item="{{item}}" length="{{receiveList.length}}" index="{{index}}" />
+      </block>
+    </view>
+  </view>
+
+  <!--红包弹窗  -->
+  <dig-receive visible="{{receiveVisible}}" questionUser="{{questionUser}}" bonusAmount="{{bonusAmount}}" questionGame="{{questionGame}}" bindclose="close" />
+  <dig-finish visible="{{finishVisible}}" questionUser="{{questionUser}}" bindclose="close" />
+</view>

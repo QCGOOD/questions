@@ -1,0 +1,5 @@
+<view class="head-title">投诉描述</view>
+<form bindsubmit="bindFormSubmit" bindsubmit="bindFormSubmit">
+   <textarea class="textarea" name="textarea" placeholder="请输入投诉内容" maxlength="120"></textarea>
+   <button class="submit-btn" form-type="submit">提交</button>
+</form>

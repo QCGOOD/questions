@@ -1,0 +1,25 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/index/topic/generate",
+    "pages/index/topic/myShare",
+    "pages/index/topic/answer",
+    "pages/index/topic/detail",
+    
+    "pages/index/member/user",
+    "pages/index/member/record",
+    "pages/index/member/ranking",
+    "pages/index/member/problem",
+    "pages/index/member/myBalance",
+    "pages/index/topic/complaint",
+    "pages/index/topic/complaintOther"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "答妃所问",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#000000"
+  }
+}

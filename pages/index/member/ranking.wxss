@@ -1,0 +1,68 @@
+/* pages/index/member/ranking.wxss */
+.ranking-info {
+  height: 300rpx;
+  background-color: #362387;
+  text-align: center;
+  padding-top: 50rpx;
+}
+.ranking-info image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3rpx solid #fff;
+}
+.ranking-info-name {
+  font-size: 34rpx;
+  margin-top: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.ranking-info-number {
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30rpx;
+}
+.ranking-box {
+  /* background-color: #fff; */
+  margin: -20rpx 30rpx 0 30rpx;
+}
+.ranking-title {
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #5745a5;
+  color: #fff;
+  border-radius: 30rpx 30rpx 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+.ranking-title text {
+   text-align: center; 
+   width: 50%; 
+}
+.ranking-title-active {
+  background-color: #d85940;
+  border-radius: 30rpx 30rpx 0 0;
+}
+.ranking-title-line-1 {
+  height: 5rpx;
+  background-color: #ededed;
+}
+.ranking-title-line-2 {
+  height: 13rpx;
+  background-color: #6753bc;
+}
+.ranking-title-line-3 {
+  height: 15rpx;
+  background-color: #362386;
+}
+.ranking-list {
+  /* height: 100rpx; */
+   background-color: #fff; 
+  margin-top: -15rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}

@@ -1,0 +1,18 @@
+<!--pages/index/member/problem.wxml-->
+<view class='problem'>
+  <view class='problem-list'>
+    <block wx:for-items="{{problemList}}" wx:key="{{index}}">
+      <view class='problem-list-item'>
+        <view class="problem-list-item-hd {{item.open ? 'problem-list-item-hd-show' : ''}}" data-index="{{index}}" bindtap='problemToggle'>
+          <view>{{item.question}}</view>
+          <image src='http://question-1255600302.file.myqcloud.com/attachments/image/problem-hd.png' mode="aspectFit"></image>
+        </view>
+        <view class="problem-list-item-bd {{item.open ? 'problem-list-item-bd-show' : ''}}">
+          <view class="problem-list-item-bd-text {{item.open ? 'problem-list-item-bd-text-show' : ''}}">{{item.answer}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <button class='kefu' open-type="contact">联系在线客服</button>
+  <view class="company-name">企成科技提供技术服务</view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/common/rankingTop/rankingTop.wxml-->
+<view class='ranking-top'>
+  <view class='ranking-top-item first'>
+    <view class='ranking-top-item-top ranking-top-first-top'>
+      <image class='ranking-top-first-top-img' src="{{rankingTop[0].img}}" mode='aspectFit'></image>
+      <image class='img-first' src="../../index/images/first.png"></image>
+    </view>
+    <view class='ranking-top-item-bottom'>
+      <view class='ranking-top-item-bottom-name'>{{rankingTop[0].name}}</view>
+      <view class='ranking-top-item-bottom-price'>共发了{{rankingTop[0].num}}元</view>
+    </view>
+  </view>
+ 
+  <view class='ranking-top-item second'>
+    <view class='ranking-top-item-top ranking-top-second-top'>
+      <image class='ranking-top-second-top-img' src="{{rankingTop[1].img}}" mode='aspectFit'></image>
+      <image class='img-second' src="../../index/images/second.png"></image>
+    </view>
+    <view class='ranking-top-item-bottom'>
+      <view class='ranking-top-item-bottom-name'>{{rankingTop[1].name}}</view>
+      <view class='ranking-top-item-bottom-price'>共发了{{rankingTop[1].num}}元</view>
+    </view>
+  </view> 
+
+   <view class='ranking-top-item third'>
+    <view class='ranking-top-item-top ranking-top-third-top'>
+      <image class='ranking-top-third-top-img' src="{{rankingTop[2].img}}" mode='aspectFit'></image>
+      <image class='img-third' src="../../index/images/third.png"></image>
+    </view>
+    <view class='ranking-top-item-bottom'>
+      <view class='ranking-top-item-bottom-name'>{{rankingTop[2].name}}</view>
+      <view class='ranking-top-item-bottom-price'>共发了{{rankingTop[2].num}}元</view>
+    </view>
+  </view> 
+
+</view>

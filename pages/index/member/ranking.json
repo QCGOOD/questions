@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#362387",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的排行",
+  "usingComponents": {
+    "ranking-item": "/pages/common/rankingItem/rankingItem",
+    "ranking-top": "/pages/common/rankingTop/rankingTop"
+  }
+}

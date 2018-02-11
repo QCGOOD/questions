@@ -1,0 +1,29 @@
+<!--pages/common/digFinish/digFinish.wxml-->
+<view class='dig-mask' wx:if="{{visible}}">
+  
+  <view class='dig-finish'>
+    
+    <view class='dig-finish-half'></view>
+
+    <view class='dig-finish-info'>
+      <image class='dig-finish-info-img' src="{{questionUser.avatarUrl}}"></image>
+      <view class='dig-finish-info-text'>
+        <text>恭喜发财</text>
+      </view>
+    </view>
+
+    <view class='dig-finish-middle'>
+      <view>很遗憾，红包抢完了</view>
+      <view>小提示，关闭页面，可继续答题</view>
+    </view>
+
+    <view class='dig-finish-check' bindtap='next'>
+      <i class="iconfont icon-hongbao"></i>
+      <text>我也去发一个</text>
+    </view>
+  </view>
+
+   <view class='dig-finish-close-box'>
+    <image class='dig-finish-close' src="http://question-1255600302.file.myqcloud.com/attachments/image/cuo.png" bindtap="close"></image>
+  </view> 
+</view>

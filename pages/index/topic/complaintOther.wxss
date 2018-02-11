@@ -1,0 +1,23 @@
+.head-title{
+   padding:15rpx 30rpx;
+   font-size:32rpx;
+   text-align: left;
+   color:#666;
+   border-bottom:1px solid #eee;
+}
+.textarea{
+   width:100%;
+   box-sizing: border-box;
+   padding:20rpx 30rpx;
+   font-size: 28rpx;
+   color:#333;
+   word-wrap: break-word;
+   background:#fff;
+   border-bottom:1px solid #eee;
+}
+.submit-btn{
+   font-size: 36rpx;
+   color:#fff;
+   background:#d85940;
+   margin:50rpx 30rpx 30rpx;
+}

@@ -1,0 +1,72 @@
+/* pages/index/member/problem.wxss */
+.problem-list {
+   padding: 30rpx 0; 
+}
+.problem-list-item {
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin: 30rpx 30rpx;
+  box-shadow: 4rpx 1rpx 5rpx #d9d9d9;
+  overflow: hidden;
+}
+.problem-list-item:first-child {
+  margin-top: 0;
+}
+.problem-list-item-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 50rpx;
+  transition: opacity .3s;
+  font-size: 32rpx;
+}
+.problem-list-item-hd-show {
+  opacity: .2;
+}
+.problem-list-item-hd image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.problem-list-item-bd {
+  height: 0;
+  overflow: hidden;
+}
+.problem-list-item-bd-show {
+  height: auto;
+}
+.problem-list-item-bd-text {
+  color: #808080;
+  font-size: 26rpx;
+  word-wrap: break-word;
+  padding: 30rpx 50rpx;
+  position: relative;
+  transform: translateY(-50%);
+  transition: .3s;
+}
+.problem-list-item-bd-text-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.problem-list-item-bd-text:before {
+  content: " ";
+  position: absolute;
+  left: 30rpx;
+  top: 0;
+  right: 30rpx;
+  height: 1px;
+  border-top: 1rpx solid #eeeeee;
+  color: #D8D8D8;
+}
+.kefu {
+  background-color: #d85940;
+  margin: 0 30rpx 20rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.company-name{
+  font-size:30rpx;
+  color:#333;
+  text-align: center;
+  padding:10rpx 0 50rpx;
+}

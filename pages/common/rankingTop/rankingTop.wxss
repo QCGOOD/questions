@@ -1,0 +1,77 @@
+/* pages/common/rankingTop/rankingTop.wxss */
+.ranking-top {
+  height: 330rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ranking-top:after {
+  content: '';
+  display: inline-block;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  position: absolute;
+  bottom: 0;
+  transform: scaleY(.5);
+}
+.ranking-top-item {
+  position: absolute;
+  width: 200rpx;
+}
+.first {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.second {
+  left: 40rpx;
+}
+.third {
+  right: 40rpx;
+}
+.ranking-top-item-top {
+  text-align: center;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.ranking-top-first-top-img{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.ranking-top-second-top-img, .ranking-top-third-top-img {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+.img-first {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top: 0rpx;
+  right: 20rpx;
+}
+.img-second, .img-third {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 15rpx;
+  right: 30rpx;
+}
+
+.ranking-top-item-bottom {
+  text-align: center;
+}
+.ranking-top-item-bottom-name {
+  font-size: 36rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.ranking-top-item-bottom-price {
+  font-size: 30rpx;
+}

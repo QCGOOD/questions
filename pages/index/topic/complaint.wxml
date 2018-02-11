@@ -1,0 +1,11 @@
+<view class="head-title">请选择投诉理由:</view>
+<view class="complaint">
+   <block wx:for="{{complaint}}" wx:key="{{index}}">
+      <view class="complaint-item"  data-index="{{index}}" data-type="{{item.type}}" bindtap="checked">
+         <view class="complaint-item-name">{{item.content}}</view>
+         <icon class="complaint-item-checked" hidden="{{!item.checked}}" type="success_no_circle" size="30" color="green"/>
+         <text wx:if="{{complaint.length-1 == index}}" class="iconfont icon-jiantou iconfont-right"></text>
+      </view>
+   </block>
+</view>
+<button class="submit-btn" bindtap="submitBtn">提交</button>

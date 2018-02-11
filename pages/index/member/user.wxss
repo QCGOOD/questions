@@ -1,0 +1,130 @@
+/* pages/index/member/user.wxss */
+
+#btn-contact{
+  box-sizing:none;
+  border-radius:none;
+}
+ #btn-contact::after{
+  content:" ";
+  width:0;
+  height:0;
+  position:static;
+  top:0;
+  left:0;
+  border:0 none;
+  border-radius: none;
+  transform:none;
+ }
+.user-info {
+  background: #362387;
+  height: 320rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.user-info-img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2rpx solid #fff;
+}
+.user-info-name {
+  font-size: 28rpx;
+  margin-top: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.user-info-name image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+
+.user-btn {
+  background-color: #fff;
+  display: flex;
+  padding: 30rpx 0;
+}
+.user-btn-item {
+   width: 100%; 
+  text-align: center;
+  position: relative;
+}
+.user-btn-item:not(:last-child):after {
+  content: '';
+  display: inline-block;
+  height: 80rpx;
+  border-right: 1rpx solid #f4d1ca;
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+}
+.user-btn-item image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.user-btn-item-text {
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+.user-navigation {
+  background-color: #fff;
+  margin-top: 30rpx;
+  
+}
+.user-navigation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  padding: 0 20rpx;
+  position: relative;
+  background:#fff;
+}
+.user-navigation-item:not(:last-child):after {
+  border-bottom: 1rpx solid #e2e2e2;
+  content: '';
+  display: inline-block;
+  border-right: 1rpx solid #f4d1ca;
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  right: 30rpx;
+}
+.user-navigation-item-left {
+  display: inline-flex;
+  align-items: center;
+}
+.user-navigation-item-left image {
+  width: 30rpx;
+  height: 30rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.user-navigation-item-left text {
+  font-size: 30rpx;
+}
+.user-navigation-item-right {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.icon-wenti-m {
+  font-size: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.icon-kefu {
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+
+.icon-jiantou {
+  font-size: 50rpx;
+  height: 50rpx;
+}

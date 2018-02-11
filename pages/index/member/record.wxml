@@ -1,0 +1,70 @@
+<!--pages/record/record.wxml-->
+<wxs module="getFloat" src="../../../filter/float.wxs"></wxs>
+
+<view class='record'>
+  <view class='receive'>
+    <view class='receive-nav'>
+      <view class="receive-nav-item {{navActive ? 'receive-nav-item-active' : ''}}" bindtap='changeNavActive' data-active="{{true}}">我发出的</view>
+      <view class="receive-nav-item {{!navActive ? 'receive-nav-item-active' : ''}}"  bindtap='changeNavActive' data-active="{{false}}">我收到的</view>
+    </view>
+    <view style='height: 100rpx;'></view>
+    <view class='receive-info'>
+      <view class='receive-info-user'>
+        <image src="{{userInfo.avatarUrl}}" class='receive-info-user-img'></image>
+        <view>{{userInfo.nickName}} {{navActive?'共发出':'共收到'}}</view>
+      </view>
+      <view class='receive-info-number'>
+        <view class='receive-info-number-item'>
+          <view class='receive-info-number-item-text'>金额(元)</view>
+          <view class='receive-info-number-item-number' hidden="{{!navActive}}">{{getFloat.baoliu(sendBonusData.price)}}</view>
+          <view class='receive-info-number-item-number' hidden="{{navActive}}">{{getFloat.baoliu(receivedBonusData.price)}}</view>
+        </view>
+        <view class='receive-info-number-item'>
+          <view class='receive-info-number-item-text'>数量(个)</view>
+          <view class='receive-info-number-item-number' hidden="{{!navActive}}">{{sendBonusData.number}}</view>
+          <view class='receive-info-number-item-number' hidden="{{navActive}}">{{receivedBonusData.number}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='receive-list'  hidden="{{!navActive}}">
+    <block wx:for="{{sendBonusList}}" wx:key="{{index}}">
+      <view class='receive-list-item' bindtap="{{navActive?'toAnswer':''}}" data-id="{{item.id}}" data-type="{{item.bonusType}}">
+        <view class='receive-list-item-left'>
+          <view class='receive-list-item-left-title'>{{item.bonusDesc?item.bonusDesc:''}}</view> 
+          <view class='receive-list-item-left-time'>{{getFloat.Replace(item.createTime)}}</view>
+        </view>
+        <view class='receive-list-item-right'>
+          <view class='receive-list-item-right-price'>{{getFloat.baoliu(navActive?item.bonusAmount:item.receiveAmount)}}元</view>
+          <view class='receive-list-item-right-number'wx:if="{{navActive}}">{{item.bonusQty?item.bonusQty:0}}个</view>
+        </view>
+      </view>
+    </block>
+    <block wx:for="{{receivedBonusList}}" wx:key="{{index}}">
+      <view class='receive-list-item' bindtap="{{navActive?'toAnswer':''}}" data-id="{{item.id}}" data-type="{{item.bonusType}}">
+        <view class='receive-list-item-left'>
+          <view class='receive-list-item-left-title'>{{item.bonusDesc?item.bonusDesc:''}}</view>
+          <view class='receive-list-item-left-time'>{{getFloat.Replace(item.createTime)}}</view>
+        </view>
+        <view class='receive-list-item-right'>
+          <view class='receive-list-item-right-price'>{{getFloat.baoliu(item.bonusAmount)}}元</view>
+          <view class='receive-list-item-right-number'>{{item.bonusQty?item.bonusQty:0}}个</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='receive-list'  hidden="{{navActive}}">
+    <block wx:for="{{receivedBonusList}}" wx:key="{{index}}">
+      <view class='receive-list-item' bindtap="{{navActive?'toAnswer':''}}" data-id="{{item.id}}" data-type="{{item.bonusType}}">
+        <view class='receive-list-item-left'>
+          <view class='receive-list-item-left-title'>{{item.bonusDesc?item.bonusDesc:''}}</view>
+          <view class='receive-list-item-left-time'>{{getFloat.Replace(item.createTime)}}</view>
+        </view>
+        <view class='receive-list-item-right'>
+          <view class='receive-list-item-right-price'>{{getFloat.baoliu(item.receiveAmount)}}元</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

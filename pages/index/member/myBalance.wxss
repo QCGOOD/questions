@@ -1,0 +1,55 @@
+
+.wrapper{
+   position: relative;
+   height:100%;
+   padding:0 50rpx;
+}
+.balance-wrap-top{
+   height:60%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.balance-img{
+  width: 120px;
+  height: 100px;
+}
+.balance-text{
+   margin:30rpx 0;
+   font-size:28rpx;
+   color:#666;
+}
+
+.price{ font-size:40rpx; }
+
+.balance-btn{
+   font-size: 36rpx;
+   color:#fff;
+   background:#d85940;
+   margin-top:20rpx;
+}
+.balance-wrap-bottom{
+   position: absolute;
+   left:0;
+   right:0;
+   bottom:50rpx;
+   margin:0 auto;
+   padding:0 50rpx;
+}
+
+.balance-tip{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 26rpx;
+  color:#555;
+}
+.balance-detail{
+   margin-top:10rpx;
+   text-align: center;
+   font-size:28rpx;
+   color:#222;
+   padding:30rpx 10rpx;
+}

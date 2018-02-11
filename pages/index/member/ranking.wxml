@@ -1,0 +1,26 @@
+<!--pages/index/member/ranking.wxml-->
+<view class='ranking'>
+  <view class='ranking-info'>
+    <image src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+    <view class='ranking-info-name'>{{userInfo.nickName}}</view>
+    <view class='ranking-info-number'>
+      <text>好友排行：{{rankingFriend}}</text>
+      <text>世界排行：{{ranking}}</text>
+    </view>
+  </view>
+
+  <view class='ranking-box'>
+    <view class='ranking-title'>
+      <text class="{{active ? 'ranking-title-active' : ''}}" data-active="{{true}}" bindtap='changeActive'>好友排行</text>
+      <text class="{{!active ? 'ranking-title-active' : ''}}" data-active="{{false}}" bindtap='changeActive'>世界排行</text>
+    </view>
+    <view class='ranking-title-line-1'></view>
+    <view class='ranking-title-line-2'></view>
+    <view class='ranking-title-line-3'></view>
+    <view class='ranking-list'>
+      <block wx:for-items="{{rankingList}}" wx:key="{{index}}">
+        <ranking-item item="{{item}}" index="{{index}}" />
+      </block>
+    </view>
+  </view>
+</view>

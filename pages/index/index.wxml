@@ -1,0 +1,84 @@
+<view class='index'>
+  <!--随机出题文字  -->
+  <view class='random-questions' wx:if="{{isRandom}}">
+    <view class='random-questions-box'>
+      <textarea class="random-questions-textarea" bindinput="textarea" name="textarea" placeholder="请输入问题" maxlength="35" value="{{poolQuestion}}"></textarea>
+      <view class='random-questions-box-btn'>
+        <view class='random-questions-box-btn-item' data-random="{{false}}" bindtap='changeRandom'>
+          <i class="iconfont icon-maikefeng1"></i>
+          <text>语音出题</text>
+        </view>
+        <view class='random-questions-box-btn-item' bindtap='randomQuestion'>
+          <i class="iconfont icon-suiji"></i>
+          <text>换一个</text>
+        </view>
+      </view> 
+    </view>
+  </view>
+
+  <!--语音出题  -->
+  <view class='questions' wx:else>
+    <view class='sound'>
+      <view class='circle'>
+        <block wx:for-items="{{circleList}}" wx:key="{{item.index}}">
+          <view class='circle-item {{item.circle}} {{item.opacity}}'></view>
+        </block>
+        <view class='circle-solid'>
+          <view class='circle-solid-border'></view>
+            <i class="iconfont icon-maikefeng" wx:if="{{!isSound}}" capture-catch:touchstart='startSound' capture-catch:touchend='stopSound' touchcancel="touchcancel" touchmove="touchmove"></i>
+            <view wx:else>
+              <i class="iconfont icon-weibiaoti519" bindtap="stopPlay" wx:if="{{isPlay}}"></i>
+              <i class="iconfont icon-bofang" bindtap="playSound" wx:else></i>
+            </view>
+        </view>
+      </view>
+    </view>
+    <view class='questions-text'>
+      <view class='questions-title-text'>
+        <text class='questions-title-text-again' bindtap='again' wx:if="{{isSound}}">我要重新录音</text>  
+        <text wx:else>按住说出口令</text>  
+      </view> 
+      <view class='questions-desc-text'>传递您的快乐</view>
+    </view>
+  </view>
+
+  <!--答案选项  -->
+  <view class='select-input'>
+    <block wx:for-items="{{answerList}}" wx:key="{{item.name}}">
+      <select-item item="{{item}}" bindkeyinput="bindKeyInput" bindselect="select" />
+    </block>
+  </view>
+
+  <!--切换随机按钮  -->
+  <view class='random'   wx:if="{{!isRandom}}">
+    <view bindtap='changeRandom' data-random="{{true}}">
+      <i class="iconfont icon-repeat"></i>
+      <text>随机出题</text>
+    </view>
+    
+  </view>
+
+  <!--下一步  -->
+  <button class='next' bindtap='uploadSound'>下一步</button>
+
+  <!--我的按钮  -->
+  <view class="my {{myActive ? 'my-active' : ''}}" id="my" bindtap="active">
+    <i class="iconfont icon-ren12"></i>
+  </view>
+
+  <!--客服  -->
+  <view class='kefu' open-type="contact">
+    <view class='kefu-text'>
+      <view>答妃所问</view>
+      <view>联系在线客服</view>
+    </view>
+    <view class='kefu-circle'>
+      <i class="iconfont icon-kefu"></i>
+    </view>
+  </view>
+  <button open-type="contact" class='kefu-btn'></button>
+
+</view>
+
+
+

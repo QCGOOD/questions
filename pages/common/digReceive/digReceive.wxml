@@ -1,0 +1,28 @@
+<!--pages/common/digReceive/digReceive.wxml-->
+<view class='dig-mask' wx:if="{{visible}}">
+  <!--打开的上方  -->
+  <view class='dig-receive-top' wx:if="{{false}}">
+    <view class='dig-receive-top-half'></view>
+    <text class='dig-receive-top-text'>好遗憾，红包抢完了</text>
+  </view>
+
+  <view class='dig-receive'>
+    
+    <view class='dig-receive-half'></view>
+    <image class='dig-receive-close' src="../../index/images/cuo.png" wx:if="{{false}}"></image>
+
+    <view class="dig-receive-kai {{rotate ? 'dig-receive-zhuan' : ''}}">
+      <view class="dig-receive-kai-text {{rotate ? 'dig-receive-zhuan' : ''}}" bindtap="open">開</view>
+    </view>
+
+    <view class='dig-receive-info'>
+      <view class='dig-receive-gx'>{{questionGame.bonusDesc}}</view>
+      <image class='dig-receive-info-img' src="{{questionUser.avatarUrl}}"></image>
+      <view class='dig-receive-info-text'>
+        <text>恭喜您，获得{{questionUser.nickName}}发的红包</text>
+      </view>
+    </view>
+    
+    <view class='dig-receive-check' wx:if="{{active}}">查看领取详情></view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/selectItem/selectItem.wxml-->
+<view class='select-item'>
+  <view class='item-left'>
+    <text class="item-left-text">{{item.name}}.</text>
+       <input bindinput='bindKeyInput' placeholder='{{item.placeholder}}' data-index="{{item.index}}" value="{{item.value}}"></input>   
+  </view>
+   <view class='item-right' bindtap='select' data-index="{{item.index}}"> 
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>
+  </view>
+</view>

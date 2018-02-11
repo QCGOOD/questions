@@ -1,0 +1,24 @@
+<!--pages/common/rankingItem/rankingItem.wxml-->
+<wxs module="getFloat" src="../../../filter/float.wxs"></wxs>
+
+<view class="ranking-item {{index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}}">
+  <view class='ranking-item-left'>
+    <view class='ranking-item-left-img'>
+      <image class='ranking-item-left-user-img' src="{{item.avatarUrl}}" mode='aspectFit'></image>
+      
+      <image class='ranking-item-left-ranking-img' src="http://question-1255600302.file.myqcloud.com/attachments/image/first.png" mode='aspectFit' wx:if="{{index === 0}}"></image>
+      <image class='ranking-item-left-ranking-img' src="http://question-1255600302.file.myqcloud.com/attachments/image/second.png" mode='aspectFit' wx:if="{{index === 1}}"></image>
+      <image class='ranking-item-left-ranking-img' src="http://question-1255600302.file.myqcloud.com/attachments/image/third.png" mode='aspectFit' wx:if="{{index === 2}}"></image>
+
+      <image class='ranking-item-left-ranking-bg' src="http://question-1255600302.file.myqcloud.com/attachments/image/first-bg.png" mode='aspectFit' wx:if="{{index === 0}}"></image>
+      <image class='ranking-item-left-ranking-bg' src="http://question-1255600302.file.myqcloud.com/attachments/image/second-bg.png" mode='aspectFit' wx:if="{{index === 1}}"></image>
+      <image class='ranking-item-left-ranking-bg' src="http://question-1255600302.file.myqcloud.com/attachments/image/third-bg.png" mode='aspectFit' wx:if="{{index === 2}}"></image>
+
+      <text class='ranking-item-lef-circle' wx:if="{{index > 2}}">{{index+1}}</text>
+    </view>
+    <text class="ranking-item-left-name {{index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}}">{{item.nickName}}</text>
+  </view>
+  <view class='ranking-item-right'>
+    <text class="{{index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}}">共发出{{getFloat.baoliu(item.totalAmount)}}元</text>
+  </view>
+</view>
