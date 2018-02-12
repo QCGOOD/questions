@@ -8,6 +8,16 @@ App({
       enableDebug: true
     })
     this.userLoing()
+
+    wx.authorize({
+      scope: 'scope.record',
+      success () {
+        console.log('录音111')
+      },
+      fail () {
+        console.log('录音222')
+      }
+    })
   }, 
 
   // 隐藏
@@ -72,7 +82,7 @@ App({
               console.log('失败')
               wx.showModal({
                 title: '警告',
-                content: '您拒绝授权用户信息功能（头像与昵称），将无法正常使用答妃所问的功能体验。是否重新授权？',
+                content: '您暂未授权用户信息功能（头像与昵称），将无法正常使用答妃所问的功能体验。是否重新授权？',
                 success: res => {
                   if (res.confirm) {
                     wx.openSetting({

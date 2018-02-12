@@ -129,17 +129,17 @@ Page({
           isSound: false,
           error: true,
         })
-        // console.log('错误 === ', err)
+        console.log('错误 === ', err)
         if (/short/.test(err.errMsg)) {
           wx.showModal({
             title: '提示',
             content: '录音时间太短，请重试'
           })
-        } else if (/fail/.test(err.errMsg)) {
-          wx.showModal({
-            title: '提示',
-            content: '录音失败，请重试'
-          })
+        // } else if (/fail/.test(err.errMsg)) {
+        //   wx.showModal({
+        //     title: '提示',
+        //     content: '录音失败，请重试'
+        //   })
         } else if (/录音设备/.test(err.errMsg)) {
           wx.showModal({
             title: '提示',
@@ -148,7 +148,7 @@ Page({
         } else if (/auth/.test(err.errMsg)) {
           wx.showModal({
             title: '警告',
-            content: '您拒绝授权录音功能，将无法使用此功能。是否重新授权？',
+            content: '您暂未授权录音功能，将无法使用此功能。是否重新授权？',
             success: res => {
               if (res.confirm) {
                 // console.log('确定')
